@@ -4,3 +4,6 @@ button {
 line {
   visibility: hidden;
 }
+.word {
+  border-bottom: 3px solid black;
+}
