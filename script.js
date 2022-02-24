@@ -1,6 +1,6 @@
 alert("Willkommen bei Hangman");
 const buttonContainer= document.querySelector('.buttonContainer')
-buttonContainer.addEventListener(´click`,signalButton);
+buttonContainer.addEventListener('click',signalButton);
 
 
 
