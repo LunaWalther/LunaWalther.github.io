@@ -19,6 +19,8 @@ function signalButton(event){
   <!-- damit bekommt man den Wert des Buttons <button..>WERT</button> -->
   const letter = button.textContent;
   
+  alert("Der gedrückte Button war: " + letter);
+  
   <!-- damit kann man den Button deaktivieren -->
   <!-- button.disabled = true; -->
   
