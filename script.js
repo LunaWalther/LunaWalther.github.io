@@ -16,7 +16,7 @@ function signalButton(event){
   -->
   
   
-  <!-- damit bekommt man den Wert des Buttons <button..>WERT</button>
+  <!-- damit bekommt man den Wert des Buttons <button..>WERT</button> -->
   const letter = button.textContent;
   
   <!-- damit kann man den Button deaktivieren -->
