@@ -1,9 +1,11 @@
 button {
-  color: tomato;
+  color: blue;
 }
 line {
   visibility: hidden;
 }
-.word {
+.word span {
+  margin: 20px;
+  font-size: 30px;
   border-bottom: 3px solid black;
 }
