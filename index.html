@@ -5,7 +5,6 @@
   <title>Hangman</title>
 </head>
 <body style="background-color:lightgray;">
-   <script src="script.js"></script>
 
    <h1 style="font-size:300%;">Hallo!Willkommen bei Hangman</h1>
 
@@ -79,6 +78,10 @@
 <p>
     <input style="height: 100px; width: 200px;" type="reset" value=" Stoppuhr" />
 </p>
+ 
+<!-- wenn man das JavaScript zu früh (nämlich vor der Definition der Buttons) aktiviert, 
+     dann sind diese logischerweise noch nicht da. Daher die null-Meldung -->
+<script src="script.js"></script>
 
   
 </body>
