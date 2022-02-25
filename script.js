@@ -1,3 +1,4 @@
+let word = "HANGMAN";
 let counter = 1;
 <!-- alert("Willkommen bei Hangman"); --> 
 const buttonContainer = document.querySelectorAll('.buttonContainer');
@@ -7,15 +8,17 @@ for (let i = 0; i < buttonContainer.length; i++) {
 
 
 const svg = document.querySelector('svg');
+const letterContainer = document.querySelector('.word');
 
 document.getElementById("neustart").addEventListener('click', neustart);
  function neustart(event){
 	 for (let i = 0; i < buttonContainer.length; i++) {
-	     for (let j = 1; j < buttonContainer[i].children.length; j++){
+	     for (let j = 0; j < buttonContainer[i].children.length; j++){
 			 buttonContainer[i].children[j].disabled = false;
 		 }
 	 }
 	 counter = 1
+	 <!-- schleife bei 1 wegen dem Blauen hintergrund -->
      for (let i = 1; i < svg.children.length; i++) {
           document.querySelector('svg').children[i].style.visibility = "hidden" ;
 		}
@@ -42,16 +45,43 @@ function signalButton(event){
   <!-- damit kann man den Button deaktivieren -->
    button.disabled = true; 
   
-  
-  <!--
-  if(counter < 2){
-    document.getElementById("Luna").style.visibility = "visible";
-  } else {
-    document.getElementById("Yunus").style.visibility = "visible";
+  if (word.includes(letter)){
+	  <!--document.querySelector("word").innerHTML = letterContainer;-->
+	  for (let i = 1; i < word.length; i++){
+        if (word[i] == letter){
+			letterContainer.children[i].innerHTML=letter;
+	    }		  
+	  }
+	  <!--Wenn der Buchstabe im Wort ist-->
+	  
+  }  else{ <!-- wenn der Buchstabe nicht da ist-->
+	  document.querySelector('svg').children[counter].style.visibility = "visible";
+      counter++; 
+	 
   }
-  -->
-  document.querySelector('svg').children[counter].style.visibility = "visible"
-  counter++;  ;
+  
+ 
+  if (gewonnen()){
+	  setTimeout(()=>{
+		  alert("Du hast gewonnen");
+	  },500);
+	  
+  }
+  else {
+   if (counter>=12){
+	   setTimeout(()=>{
+		  alert("Du hast verloren!");
+	  },500);
+   }
+  }
 }
 
 
+function gewonnen(){
+      for (let i = 1; i < letterContainer.children.length; i++){
+        if (letterContainer.children[i].innerHTML == ""){
+		   return false;
+	    }		  
+	  }
+	  return true;
+}
