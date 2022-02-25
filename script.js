@@ -26,7 +26,7 @@ function signalButton(event){
   <!-- button.disabled = true; -->
   counter = counter + 1;
   
-  if(counter < 1){
+  if(counter < 2){
      document.getElementById("Luna").style.visibility = "hidden";
   } else {
     document.getElementById("Yunus").style.visibility = "hidden";
