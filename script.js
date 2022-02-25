@@ -1,3 +1,4 @@
+let counter = 0;
 <!-- alert("Willkommen bei Hangman"); --> 
 const buttonContainer = document.querySelector('.buttonContainer');
 buttonContainer.addEventListener('click', signalButton);
@@ -23,9 +24,13 @@ function signalButton(event){
   
   <!-- damit kann man den Button deaktivieren -->
   <!-- button.disabled = true; -->
+  counter = counter + 1;
   
-  document.getElementById("Luna").style.color = "blue";
-  
+  if(counter < 1){
+     document.getElementById("Luna").style.visibility = "hidden";
+  } else {
+    document.getElementById("Yunus").style.visibility = "hidden";
+  }
 }
 
 
