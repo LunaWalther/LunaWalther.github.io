@@ -24,6 +24,8 @@ function signalButton(event){
   <!-- damit kann man den Button deaktivieren -->
   <!-- button.disabled = true; -->
   
+  document.getElementById("Luna").style.color = "blue";
+  
 }
 
 
